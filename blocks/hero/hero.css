@@ -45,10 +45,9 @@
 .hero.block > div:nth-child(2) h4 {
   color: #0073e6 !important;
   background-color: #FFF;
-  border-width: 1px;
+  border-bottom: solid;
   border-color: lightgray;
   padding: 30px 60px 30px 20px;
-  font-weight: 700;
   transition: background-color 0.3s, color 0.3s; /* Transition effect */
 }
 
