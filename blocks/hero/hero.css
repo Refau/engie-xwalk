@@ -68,7 +68,7 @@
 /* Right side content */
 
 .hero.block > div:nth-child(2) {
-  flex: 2;
+  flex: 3;
   padding: 20px;
 }
 
