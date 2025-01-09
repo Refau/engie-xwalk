@@ -211,31 +211,6 @@
         "multi": false
       },
       {
-        "component": "multiselect",
-        "valueType": "string",
-        "name": "classes",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Size",
-            "children": [
-              {
-                "name": "Small",
-                "value": "small"
-              },
-              {
-                "name": "Medium",
-                "value": "medium"
-              },
-              {
-                "name": "Large",
-                "value": "large"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",

@@ -27,7 +27,6 @@
   height: 100%;
 }
 
-
 .hero.block {
   display: flex;
   flex-direction: row;
@@ -36,58 +35,30 @@
   color: white;
 }
 
-
-/* Left side image */
-.hero.block > div:first-child {
-  flex: 1;
-}
-
-
-
-/* Right side content */
-.hero.block > div:nth-child(2),
-.hero.block > div:nth-child(3) {
+/* Right side (Text box with Heading and Arrow) */
+.hero.block > div:nth-child(2) {
   flex: 1;
   padding: 20px;
+  background-color: white; /* White background for text */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the box */
+  color: black; /* Black text color */
+  border-radius: 8px; /* Rounded corners for the white box */
+  display: flex;
+  justify-content: space-between; /* Space between the heading and the arrow */
+  align-items: center; /* Center the content vertically */
 }
 
-.hero h1 {
+/* Heading styling */
+.hero h2 {
   font-size: 24px;
   font-weight: bold;
-  color: white;
+  color: #0073e6; /* Blue color for the heading */
+  margin: 0; /* Remove default margin */
 }
 
-.hero h3 {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
+/* Left arrow icon styling */
+.hero .arrow-icon {
+  font-size: 24px; /* Adjust the size of the arrow icon */
+  color: #0073e6; /* Blue color for the arrow */
+  margin-left: 20px; /* Add space between text and icon */
 }
-
-.hero p {
-  font-size: 16px;
-  color: white;
-  line-height: 1.5;
-}
-
-.button-container {
-  margin-top: 20px;
-}
-
-.button.button-primary {
-  display: inline-block;
-  background-color: #0073e6;
-  color: white;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.button.button-primary:hover {
-  background-color: #005bb5;
-}
-
-
-

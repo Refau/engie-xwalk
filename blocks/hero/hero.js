@@ -10,4 +10,10 @@ export default async function decorate(block) {
   console.log(blockConfig);
   console.log(blockConfig.heading);
   console.log(blockConfig['heading']);
+  const div = block.children[2];
+
+  if (div) {
+    const btnContainer = div.querySelector('.button-container');
+    btnContainer.querySelector('a').classList.add('button-primary');
+  }
 }
