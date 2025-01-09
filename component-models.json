@@ -249,8 +249,8 @@
         "valueType": "string",
         "options": [
           {
-            "name": "h2",
-            "value": "h2"
+            "name": "h4",
+            "value": "h4"
           }
         ]
       },
@@ -269,8 +269,8 @@
         "valueType": "string",
         "options": [
           {
-            "name": "h2",
-            "value": "h2"
+            "name": "h4",
+            "value": "h4"
           }
         ]
       },
@@ -289,8 +289,8 @@
         "valueType": "string",
         "options": [
           {
-            "name": "h2",
-            "value": "h2"
+            "name": "h4",
+            "value": "h4"
           }
         ]
       },
