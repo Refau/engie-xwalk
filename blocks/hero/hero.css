@@ -13,10 +13,32 @@
   min-height: 300px;
 }
 
-.hero picture {
+/* Conteneur de l'image */
+.hero.block > div:first-child {
+  position: relative; /* Assure que le gradient reste dans cette div */
+  flex: 0;
+  overflow: hidden; /* Empêche le gradient de déborder */
+}
+
+/* Ajout du gradient au-dessus de l'image SANS couvrir le texte */
+.hero.block > div:first-child::before {
+  content: "";
   position: absolute;
-  z-index: -1; /* Place l'image en arrière-plan sous le gradient */
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none; /* Ne bloque pas les interactions avec l'image */
+  z-index: 1; /* Juste au-dessus de l'image, mais en dessous du texte */
+}
+
+.hero picture {
+  position: relative; /* Assure que l’image est bien visible */
+  z-index: 0; /* Sous le gradient */
+  display: block;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   box-sizing: border-box;
 }
@@ -27,7 +49,7 @@
   height: 100%;
 }
 
-
+/* Bloc principal */
 .hero.block {
   max-width: 1500px;
   display: flex;
@@ -36,37 +58,33 @@
   color: white;
 }
 
-
-/* Left side image */
-.hero.block > div:first-child {
-  flex: 0;
-}
-
+/* Titres avec icônes */
 .hero.block > div:nth-child(2) h4 {
-  display: inline-flex; /* Utilise inline-flex pour aligner horizontalement */
-  align-items: center;  /* Aligne verticalement les éléments au centre */
+  display: flex; /* Utilise flex pour aligner l'icône */
+  align-items: center;
+  justify-content: space-between; /* Espace entre le texte et l'icône */
   color: #0073e6 !important;
   background-color: #FFF;
   border-bottom: solid;
   border-color: lightgray;
   padding: 30px 60px 30px 20px;
-  transition: background-color 0.3s, color 0.3s; /* Transition effect */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover effect */
+/* Effet hover */
 .hero.block > div:nth-child(2) h4:hover {
-  background-color: #0073e6; /* Blue background */
-  color: white !important; /* White text */
+  background-color: #0073e6;
+  color: white !important;
 }
 
-
+/* SVG à droite du h4 */
 .hero-wrapper .hero.block > div:nth-child(2) h4 svg {
-  margin-left: 10px; /* Ajoute un espace entre le texte et l'icône */
-  fill: currentColor !important; /* Fait en sorte que la couleur du SVG suive celle du texte */
+  margin-left: 10px;
+  fill: currentColor !important;
+  flex-shrink: 0;
 }
 
-/* Right side content */
-
+/* Section droite */
 .hero.block > div:nth-child(2) {
   flex: 3;
   padding: 20px;
@@ -77,6 +95,7 @@
   padding: 20px;
 }
 
+/* Autres styles */
 .hero h1 {
   font-size: 24px;
   font-weight: bold;
@@ -114,4 +133,3 @@
 .button.button-primary:hover {
   background-color: #005bb5;
 }
-
