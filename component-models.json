@@ -242,6 +242,19 @@
         "value": ""
       },
       {
+        "component": "select",
+        "name": "heading_oneType",
+        "value": "",
+        "label": "Heading 1 Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "h2",
+            "value": "h2"
+          }
+        ]
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "heading_tow",
@@ -249,11 +262,37 @@
         "value": ""
       },
       {
+        "component": "select",
+        "name": "heading_towType",
+        "value": "",
+        "label": "Heading 2 Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "h2",
+            "value": "h2"
+          }
+        ]
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "heading_three",
         "label": "Heading 3",
         "value": ""
+      },
+      {
+        "component": "select",
+        "name": "heading_threeType",
+        "value": "",
+        "label": "Heading 3 Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "h2",
+            "value": "h2"
+          }
+        ]
       },
       {
         "component": "richtext",
