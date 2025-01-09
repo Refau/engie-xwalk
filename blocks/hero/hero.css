@@ -43,6 +43,8 @@
 }
 
 .hero.block > div:nth-child(2) h4 {
+  display: inline-flex; /* Utilise inline-flex pour aligner horizontalement */
+  align-items: center;  /* Aligne verticalement les éléments au centre */
   color: #0073e6 !important;
   background-color: #FFF;
   border-bottom: solid;
@@ -57,6 +59,11 @@
   color: white !important; /* White text */
 }
 
+
+.hero-wrapper .hero.block > div:nth-child(2) h4 svg {
+  margin-left: 10px; /* Ajoute un espace entre le texte et l'icône */
+  fill: currentColor; /* Fait en sorte que la couleur du SVG suive celle du texte */
+}
 
 /* Right side content */
 
@@ -107,3 +114,4 @@
 .button.button-primary:hover {
   background-color: #005bb5;
 }
+

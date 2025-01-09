@@ -29,7 +29,7 @@ export default async function decorate(block) {
   `;
 
     // Parcours chaque h4 et ajoute l'élément SVG
-    headings.forEach(function(heading) {
-      heading.insertAdjacentHTML('afterend', svgIcon);
-    });
+  headings.forEach(function(heading) {
+    heading.insertAdjacentHTML('afterend', svgIcon);
+  });
 }
