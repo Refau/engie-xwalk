@@ -13,8 +13,21 @@
   min-height: 300px;
 }
 
-/* Ajoute un gradient horizontal noir → transparent au-dessus de l'image */
-.hero.block::before {
+.hero picture {
+  position: absolute;
+  z-index: -1; /* Place l'image en arrière-plan sous le gradient */
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero.block > div:first-child {
+  position: relative; /* Permet d'encapsuler le gradient sans affecter le reste */
+  flex: 0;
+}
+
+/* Ajoute un gradient horizontal noir → transparent uniquement au-dessus de l'image */
+.hero.block > div:first-child::before {
   content: ""; /* Nécessaire pour un pseudo-élément */
   position: absolute; /* Superposé sur l'image */
   top: 0;
@@ -27,12 +40,9 @@
 }
 
 /* Ajuste la position de l'image pour qu'elle soit sous le gradient */
-.hero picture {
-  position: absolute;
+.hero.block > div:first-child picture {
+  position: relative; /* Maintient l'image dans son conteneur */
   z-index: -1; /* Place l'image en arrière-plan sous le gradient */
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
 }
 
 .hero.block img {
