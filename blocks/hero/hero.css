@@ -14,35 +14,20 @@
 }
 
 .hero picture {
-  position: relative; /* Garde l'image en place */
-  z-index: 1; /* Assure que l’image est visible */
-  display: block;
-  width: 100%;
-  height: auto;
+  position: absolute;
+  z-index: -1; /* Place l'image en arrière-plan sous le gradient */
+  inset: 0;
   object-fit: cover;
   box-sizing: border-box;
 }
 
-/* Ajout du gradient sur l'image uniquement */
-.hero.block > div:first-child {
-  position: relative; /* Nécessaire pour encapsuler le gradient */
-  flex: 0;
-  overflow: hidden; /* Empêche le gradient de déborder */
-}
-
-.hero.block > div:first-child::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero.block img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-  pointer-events: none;
-  z-index: 2; /* S'assure que le gradient est bien au-dessus de l'image */
 }
 
-/* Hero block layout */
+
 .hero.block {
   max-width: 1500px;
   display: flex;
@@ -51,38 +36,37 @@
   color: white;
 }
 
+
 /* Left side image */
 .hero.block > div:first-child {
   flex: 0;
 }
 
-/* Right side text styling */
 .hero.block > div:nth-child(2) h4 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Espace entre le texte et l'icône */
+  display: inline-flex; /* Utilise inline-flex pour aligner horizontalement */
+  align-items: center;  /* Aligne verticalement les éléments au centre */
   color: #0073e6 !important;
   background-color: #FFF;
   border-bottom: solid;
   border-color: lightgray;
   padding: 30px 60px 30px 20px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s; /* Transition effect */
 }
 
 /* Hover effect */
 .hero.block > div:nth-child(2) h4:hover {
-  background-color: #0073e6;
-  color: white !important;
+  background-color: #0073e6; /* Blue background */
+  color: white !important; /* White text */
 }
 
-/* SVG icon next to h4 */
-.hero.block > div:nth-child(2) h4 svg {
-  margin-left: 10px;
-  fill: currentColor !important;
-  flex-shrink: 0;
+
+.hero-wrapper .hero.block > div:nth-child(2) h4 svg {
+  margin-left: 10px; /* Ajoute un espace entre le texte et l'icône */
+  fill: currentColor !important; /* Fait en sorte que la couleur du SVG suive celle du texte */
 }
 
 /* Right side content */
+
 .hero.block > div:nth-child(2) {
   flex: 3;
   padding: 20px;
@@ -130,3 +114,4 @@
 .button.button-primary:hover {
   background-color: #005bb5;
 }
+
