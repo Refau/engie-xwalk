@@ -81,10 +81,5 @@
   background-color: #005bb5;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, black, transparent);
-  z-index: -1; /* Keeps it behind the content */
-}
+
+
