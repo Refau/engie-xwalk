@@ -13,13 +13,7 @@
   min-height: 300px;
 }
 
-.hero picture {
-  position: absolute;
-  z-index: -1; /* Place l'image en arrière-plan sous le gradient */
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
+
 
 .hero.block > div:first-child {
   position: relative; /* Permet d'encapsuler le gradient sans affecter le reste */
