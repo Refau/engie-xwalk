@@ -10,7 +10,7 @@
   position: absolute;
   z-index: -1;
   inset: 0;
-  object-fit: cover;
+  object-fit: contain;
   box-sizing: border-box;
 }
 
