@@ -191,6 +191,7 @@ header nav .nav-brand img {
 header nav .nav-sections {
   width: 100%;
   margin-left: 0;
+  text-align: center;
 }
 
 header nav[aria-expanded='true'] .nav-sections {
@@ -201,10 +202,13 @@ header nav[aria-expanded='true'] .nav-sections {
 
 header nav .nav-sections ul {
   list-style: none;
-  padding-left: 0;
   font: var(--type-body-1-default-font);
   letter-spacing: var(--type-body-1-default-letter-spacing);
   gap: 1em;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 header nav .nav-sections ul > li {
@@ -217,7 +221,9 @@ header nav .nav-sections ul > li {
   }
 
   header nav .nav-sections ul {
-    gap: 0.5em;
+    display: flex;
+    justify-content: center;
+    margin: 0;
   }
 }
 
@@ -285,6 +291,10 @@ header nav .nav-sections ul > li > a:hover {
   header nav .nav-sections ul {
     display: flex;
     margin: 0;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul {
+    justify-content: center;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
