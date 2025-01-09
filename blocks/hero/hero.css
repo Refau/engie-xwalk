@@ -30,7 +30,39 @@
   height: 100%;
 }
 
-@media (width >= 900px) {
+.hero > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero > div > div {
+  flex: 1;
+}
+
+.hero h1 {
+  margin: 0; /* Remove default margins */
+  text-align: left; /* Align text to the left */
+}
+
+@media (max-width: 900px) {
+  .hero > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero > div > div {
+    flex: unset; /* Disable flex for child divs on small screens */
+    width: 100%; /* Make sure each div takes full width */
+  }
+
+  .hero-text {
+    max-width: none; /* Ensure the text doesn't get constrained */
+  }
+}
+
+@media (min-width: 900px) {
   .hero {
     padding: 40px 32px;
   }
