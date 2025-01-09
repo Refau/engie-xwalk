@@ -1,9 +1,19 @@
-/* General styling for hero section */
-.hero-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+.hero-container .hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+}
+
+.hero h1 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
 }
 
 .hero picture {
@@ -14,74 +24,14 @@
   box-sizing: border-box;
 }
 
-.hero.block {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  max-width: 1200px;
-  color: white;
-}
-
-/* Left side image */
-.hero.block > div:first-child {
-  flex: 1;
-}
-
-.hero.block img {
+.hero img {
+  object-fit: cover;
   width: 100%;
-  height: auto;
-  border-radius: 5px;
+  height: 100%;
 }
 
-/* Right side content */
-.hero.block > div:nth-child(2),
-.hero.block > div:nth-child(3) {
-  flex: 1;
-  padding: 20px;
-}
-
-.hero h1 {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
-
-.hero h3 {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-}
-
-.hero p {
-  font-size: 16px;
-  color: white;
-  line-height: 1.5;
-}
-
-.button-container {
-  margin-top: 20px;
-}
-
-.button.button-primary {
-  display: inline-block;
-  background-color: #0073e6;
-  color: white;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.button.button-primary:hover {
-  background-color: #005bb5;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, black, transparent);
-  z-index: -1; /* Keeps it behind the content */
+@media (width >= 900px) {
+  .hero {
+    padding: 40px 32px;
+  }
 }
