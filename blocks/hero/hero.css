@@ -61,12 +61,12 @@
 /* Right side content */
 
 .hero.block > div:nth-child(2) {
-  flex: 1;
+  flex: 2;
   padding: 20px;
 }
 
 .hero.block > div:nth-child(3) {
-  flex: 2;
+  flex: 5;
   padding: 20px;
 }
 
