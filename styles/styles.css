@@ -255,41 +255,12 @@ h6 {
   margin: 0;
 }
 
-.section .default-content-wrapper h1::after,
-.section .default-content-wrapper h2::after,
-.section .default-content-wrapper h3::after,
-.section .default-content-wrapper h4::after,
-.section .default-content-wrapper h5::after,
-.section .default-content-wrapper h6::after {
-  border-bottom: 2px solid var(--primary-color);
-  content: '';
-  display: block;
-  padding-top: 8px;
-  min-width: 84px;
-  width: fit-content;
-}
 
-.section.bg-primary .default-content-wrapper h1::after,
-.section.bg-primary .default-content-wrapper h2::after,
-.section.bg-primary .default-content-wrapper h3::after,
-.section.bg-primary .default-content-wrapper h4::after,
-.section.bg-primary .default-content-wrapper h5::after,
-.section.bg-primary .default-content-wrapper h6::after {
-  border-bottom: 2px solid var(--secondary-color);
-}
 
 .section.full-width {
   padding-inline: 0;
 }
 
-.section.bg-primary {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-}
-
-.section.bg-secondary {
-  background-color: var(--secondary-color);
-}
 
 .section.align-right .default-content-wrapper,
 .section.align-right .default-content-wrapper p,

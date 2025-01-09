@@ -30,9 +30,9 @@
         "label": "Text"
       },
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "style",
-        "value": "Center",
+        "value": "",
         "label": "Style",
         "valueType": "string",
         "options": [
