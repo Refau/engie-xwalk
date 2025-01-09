@@ -1,18 +1,11 @@
-# Edge Delivery Services + Adobe Commerce Boilerplate
-This project boilerplate is for Edge Delivery Services projects that integrate with Adobe Commerce.
+# Edge Delivery Services
 
-## Documentation
-https://experienceleague.adobe.com/developer/commerce/storefront/
 
-## Environments - Doc-based
-
-- Preview: https://main--citisignal-doc--adobedevxsc.aem.page/
-- Live: https://main--citisignal-doc--adobedevxsc.aem.live/
 
 ## Environments - AEM UE + Crosswalk
 
-- Preview: https://main--citisignal-one--adobedevxsc.aem.page/
-- Live: https://main--citisignal-one--adobedevxsc.aem.live/
+- Preview: https://main--engie-xwalk--refau.aem.page/
+- Live: https://main--engie-xwalk--refau.aem.live/
 
 ## Pre-requisites
 
