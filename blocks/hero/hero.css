@@ -2,6 +2,9 @@
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero {
