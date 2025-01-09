@@ -297,6 +297,11 @@ header nav .nav-sections ul > li > a:hover {
     position: relative;
   }
 
+  header nav .nav-sections ul > li:hover > p {
+    color: #007acd;
+    position: relative;
+  }
+
   header nav .nav-sections ul > li > p::after {
     content: '';
     position: absolute;
