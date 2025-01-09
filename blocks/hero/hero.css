@@ -43,16 +43,14 @@
 }
 
 .hero.block > div:nth-child(2) h4 {
-  display: flex;
-  justify-content: space-between;/* Utilise inline-flex pour aligner horizontalement */
+  display: inline-flex; /* Utilise inline-flex pour aligner horizontalement */
   align-items: center;  /* Aligne verticalement les éléments au centre */
   color: #0073e6 !important;
   background-color: #FFF;
   border-bottom: solid;
   border-color: lightgray;
   padding: 30px 60px 30px 20px;
-  transition: background-color 0.3s, color 0.3s;
-  width: 100%;/* Transition effect */
+  transition: background-color 0.3s, color 0.3s; /* Transition effect */
 }
 
 /* Hover effect */
@@ -64,7 +62,7 @@
 
 .hero-wrapper .hero.block > div:nth-child(2) h4 svg {
   margin-left: 10px; /* Ajoute un espace entre le texte et l'icône */
-  fill: #0073e6 !important; /* Fait en sorte que la couleur du SVG suive celle du texte */
+  fill: currentColor !important; /* Fait en sorte que la couleur du SVG suive celle du texte */
 }
 
 /* Right side content */
