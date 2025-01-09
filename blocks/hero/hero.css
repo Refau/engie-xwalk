@@ -29,6 +29,7 @@
 
 
 .hero.block {
+  max-width: 1500px;
   display: flex;
   flex-direction: row;
   align-items: center;
