@@ -1,5 +1,4 @@
 /* eslint-disable import/no-cycle */
-import { events } from '@dropins/tools/event-bus.js';
 import {
   sampleRUM,
   loadHeader,
@@ -18,19 +17,8 @@ import {
   toCamelCase,
   toClassName
 } from './aem.js';
-import { getProduct, getSkuFromUrl, trackHistory } from './commerce.js';
-import initializeDropins from './dropins.js';
 
-const LCP_BLOCKS = [
-  'product-list-page',
-  'product-list-page-custom',
-  'product-details',
-  'product-details-plan',
-  'commerce-cart',
-  'commerce-checkout',
-  'commerce-account',
-  'commerce-login',
-]; // add your LCP blocks to the list
+
 
 const AUDIENCES = {
   mobile: () => window.innerWidth < 600,
@@ -237,7 +225,7 @@ function preloadFile(href, as) {
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
-  await initializeDropins();
+
   decorateTemplateAndTheme();
 
   // Instrument experimentation plugin
@@ -256,51 +244,6 @@ async function loadEager(doc) {
   window.adobeDataLayer = window.adobeDataLayer || [];
 
   let pageType = 'CMS';
-  if (document.body.querySelector('main .product-details')) {
-    pageType = 'Product';
-    const sku = getSkuFromUrl();
-    window.getProductPromise = getProduct(sku);
-
-    preloadFile('/scripts/__dropins__/storefront-pdp/containers/ProductDetails.js', 'script');
-    preloadFile('/scripts/__dropins__/storefront-pdp/api.js', 'script');
-    preloadFile('/scripts/__dropins__/storefront-pdp/render.js', 'script');
-    preloadFile('/scripts/__dropins__/storefront-pdp/chunks/initialize.js', 'script');
-    preloadFile('/scripts/__dropins__/storefront-pdp/chunks/getRefinedProduct.js', 'script');
-  } else if (document.body.querySelector('main .product-details-custom')) {
-    pageType = 'Product';
-    preloadFile('/scripts/preact.js', 'script');
-    preloadFile('/scripts/htm.js', 'script');
-    preloadFile('/blocks/product-details-custom/ProductDetailsCarousel.js', 'script');
-    preloadFile('/blocks/product-details-custom/ProductDetailsSidebar.js', 'script');
-    preloadFile('/blocks/product-details-custom/ProductDetailsShimmer.js', 'script');
-    preloadFile('/blocks/product-details-custom/Icon.js', 'script');
-
-    const blockConfig = readBlockConfig(
-      document.body.querySelector('main .product-details-custom'),
-    );
-    const sku = getSkuFromUrl() || blockConfig.sku;
-    window.getProductPromise = getProduct(sku);
-  } else if (document.body.querySelector('main .product-list-page')) {
-    pageType = 'Category';
-    preloadFile('/scripts/widgets/search.js', 'script');
-  } else if (document.body.querySelector('main .product-list-page-custom')) {
-    // TODO Remove this bracket if not using custom PLP
-    pageType = 'Category';
-    const plpBlock = document.body.querySelector('main .product-list-page-custom');
-    const { category, urlpath } = readBlockConfig(plpBlock);
-
-    if (category && urlpath) {
-      // eslint-disable-next-line import/no-unresolved, import/no-absolute-path
-      const { preloadCategory } = await import(
-        '/blocks/product-list-page-custom/product-list-page-custom.js'
-      );
-      preloadCategory({ id: category, urlPath: urlpath });
-    }
-  } else if (document.body.querySelector('main .commerce-cart')) {
-    pageType = 'Cart';
-  } else if (document.body.querySelector('main .commerce-checkout')) {
-    pageType = 'Checkout';
-  }
 
   window.adobeDataLayer.push({
     pageContext: {
@@ -325,8 +268,6 @@ async function loadEager(doc) {
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
-
-  events.emit('eds/lcp', true);
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
@@ -356,15 +297,9 @@ async function loadLazy(doc) {
     loadHeader(doc.querySelector('header')),
     loadFooter(doc.querySelector('footer')),
     loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`),
-    loadFonts(),
-    import('./acdl/adobe-client-data-layer.min.js'),
+    loadFonts()
   ]);
 
-  if (sessionStorage.getItem('acdl:debug')) {
-    import('./acdl/validate.js');
-  }
-
-  trackHistory();
 
   // Implement experimentation preview pill
   if (

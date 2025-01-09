@@ -25,14 +25,6 @@
       "icon-block",
       "content-fragment-offer",
       "social-media",
-      "product-list-page",
-      "enrichment",
-      "product-details",
-      "product-details-plan",
-      "recommended-products",
-      "commerce-cart",
-      "commerce-checkout",
-      "commerce-order-confirmation",
       "columnsjo"
     ]
   },
@@ -46,7 +38,7 @@
   },
   {
     "id": "column",
-    "components": ["text", "image", "button", "title"]
+    "components": ["text", "image", "button", "title", "teaser"]
   },
   {
     "id": "accordion",
