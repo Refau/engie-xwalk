@@ -13,9 +13,23 @@
   min-height: 300px;
 }
 
+/* Ajoute un gradient horizontal noir → transparent au-dessus de l'image */
+.hero.block::before {
+  content: ""; /* Nécessaire pour un pseudo-élément */
+  position: absolute; /* Superposé sur l'image */
+  top: 0;
+  left: 0;
+  width: 100%; /* Couvre toute la largeur */
+  height: 100%; /* Couvre toute la hauteur */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none; /* Ne bloque pas l'interaction avec les éléments sous-jacents */
+  z-index: 1; /* S'assure que le gradient est au-dessus de l'image */
+}
+
+/* Ajuste la position de l'image pour qu'elle soit sous le gradient */
 .hero picture {
   position: absolute;
-  z-index: -1;
+  z-index: -1; /* Place l'image en arrière-plan sous le gradient */
   inset: 0;
   object-fit: cover;
   box-sizing: border-box;
