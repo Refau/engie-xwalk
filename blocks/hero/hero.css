@@ -30,6 +30,7 @@
   height: 100%;
 }
 
+/* Applying Flexbox directly to the hero section */
 .hero > div {
   display: flex;
   justify-content: space-between;
@@ -37,28 +38,27 @@
   gap: 20px;
 }
 
-.hero > div > div {
-  flex: 1;
-}
-
+/* Adjust layout inside hero-text */
 .hero h1 {
-  margin: 0; /* Remove default margins */
+  margin: 0;
   text-align: left; /* Align text to the left */
 }
 
+.hero > div > div {
+  flex: 1; /* Distribute space equally between the two divs */
+}
+
+/* Adjust the behavior on small screens */
 @media (max-width: 900px) {
   .hero > div {
     flex-direction: column;
     align-items: flex-start;
   }
 
+  /* Remove flex from individual divs and allow them to take full width */
   .hero > div > div {
-    flex: unset; /* Disable flex for child divs on small screens */
-    width: 100%; /* Make sure each div takes full width */
-  }
-
-  .hero-text {
-    max-width: none; /* Ensure the text doesn't get constrained */
+    flex: unset;
+    width: 100%;
   }
 }
 
