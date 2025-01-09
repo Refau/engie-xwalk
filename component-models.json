@@ -31,6 +31,23 @@
       },
       {
         "component": "select",
+        "name": "style",
+        "value": "Center",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Center",
+            "value": "align-center"
+          },
+          {
+            "name": "Right",
+            "value": "align-right"
+          }
+        ]
+      },
+      {
+        "component": "select",
         "name": "type",
         "value": "h1",
         "label": "Type",
