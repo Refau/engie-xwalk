@@ -245,22 +245,23 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "heading",
-        "label": "Heading",
+        "name": "heading_one",
+        "label": "Heading 1",
         "value": ""
       },
       {
-        "component": "select",
-        "name": "headingType",
-        "value": "",
-        "label": "Heading Type",
+        "component": "text",
         "valueType": "string",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          }
-        ]
+        "name": "heading_tow",
+        "label": "Heading 2",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading_three",
+        "label": "Heading 3",
+        "value": ""
       },
       {
         "component": "richtext",

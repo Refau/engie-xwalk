@@ -357,13 +357,7 @@ main pre {
   white-space: pre;
 }
 
-.block a:any-link.button {
-  width: fit-content;
-  padding: 10px;
-  padding-inline: 30px;
-  background-color: var(--primary-color);
-  border-radius: 30px;
-}
+
 
 /* links */
 a:any-link {
@@ -397,93 +391,6 @@ button.button > u {
 button {
   border: none;
   font: var(--type-base-font-family);
-}
-
-button.button-primary,
-a.button-primary {
-  display: block;
-  background-color: var(--color-brand-500);
-  font-size: var(--body-font-size-md);
-  font-weight: 600;
-  color: var(--color-neutral-50);
-  padding: 8px 30px;
-  width: fit-content;
-  height: auto;
-  letter-spacing: 0.08em;
-  box-sizing: border-box;
-  text-decoration: none;
-  text-align: center;
-  margin: 15px 0;
-  text-transform: uppercase;
-  border-radius: 24px;
-}
-
-button.button-primary:hover,
-a.button-primary:hover {
-  background-color: var(--color-brand-600);
-}
-
-button.button-primary:active,
-a.button-primary:active {
-  background-color: var(--color-brand-700);
-}
-
-button.button-secondary,
-a.button-secondary {
-  display: block;
-  background-color: var(--color-black-100);
-  font-size: var(--body-font-size-md);
-  font-weight: 600;
-  color: var(--color-neutral-50);
-  padding: 8px 24px;
-  width: fit-content;
-  height: auto;
-  letter-spacing: 0.08em;
-  box-sizing: border-box;
-  text-decoration: none;
-  text-align: center;
-  margin: 15px 0;
-  text-transform: uppercase;
-}
-
-.button-tertiary {
-  font-size: var(--body-font-size-md);
-  font-weight: 600;
-  color: var(--color-black-100);
-  padding: 8px 24px;
-  width: fit-content;
-  height: auto;
-  letter-spacing: 0.08em;
-  box-sizing: border-box;
-  text-decoration: none;
-  text-align: center;
-  margin: 15px 0;
-  text-transform: uppercase;
-  background: none;
-}
-
-a.button.disabled,
-button:not([class^='elsie-']):disabled,
-button:not([class^='elsie-']):disabled:hover {
-  background-color: var(--color-neutral-300);
-  cursor: unset;
-}
-
-main a.button.secondary,
-button.button.secondary {
-  background-color: unset;
-  border: var(--shape-border-width-3) solid currentcolor;
-  color: var(--color-brand-500);
-}
-
-a.button.secondary:hover,
-button:not([class^='elsie-']).secondary:hover {
-  color: var(--color-brand-600);
-}
-
-.button-tertiary:hover {
-  color: var(--color-neutral-700);
-  cursor: pointer;
 }
 
 main input:hover {
@@ -577,14 +484,6 @@ main .section.section-title .default-content-wrapper:first-of-type p {
   letter-spacing: var(--type-headline-2-strong-letter-spacing);
 }
 
-main .section.section-title .default-content-wrapper:first-of-type p::after {
-  border-bottom: 2px solid var(--color-brand-600);
-  content: '';
-  display: block;
-  padding-top: 8px;
-  min-width: 84px;
-  width: fit-content;
-}
 
 main .section.author .default-content-wrapper {
   display: flex;

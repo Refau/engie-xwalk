@@ -86,8 +86,7 @@
                 "template": {
                   "name": "Hero",
                   "model": "hero",
-                  "heading": "New Hero",
-                  "headingType": "h1"
+                  "heading_one": "New Hero"
                 }
               }
             }
