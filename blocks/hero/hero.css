@@ -55,7 +55,7 @@
 /* Hover effect */
 .hero.block > div:nth-child(2) h4:hover {
   background-color: #0073e6; /* Blue background */
-  color: white; /* White text */
+  color: white !important; /* White text */
 }
 
 
