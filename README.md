@@ -7,18 +7,6 @@
 - Preview: https://main--engie-xwalk--refau.aem.page/
 - Live: https://main--engie-xwalk--refau.aem.live/
 
-## Pre-requisites
-
-Out of the box, this project template uses a pre-configured Adobe Commerce environment. If you want to use your own Adobe Commerce environment, you'll need to update the `configs.xlsx` file in your content repository to have values that match your environment.
-
-Additionally, you need to have the following modules and customizations installed on your environment:
-
-1. magento/magento-extra-graphql: Commerce module required for Cart and Checkout Drop-Ins.
-1. magento/module-data-services-graphql: Commerce module with functionality necessary for adding context to events.
-1. magento/module-page-builder-product-recommendations: Commerce module required for PRex Widget
-1. magento/module-visual-product-recommendations: Commerce module required for PRex Widget
-<!-- 1. TODO: Add further prereqs.  -->
-
 ## Installation
 
 ```sh
