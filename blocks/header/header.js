@@ -107,21 +107,6 @@ function addAnimation() {
   });
 }
 
-function setActiveTab() {
-  const currentPath = window.location.pathname;
-  const matchResult = currentPath.match(/^\/([^/]+)/);
-  const path = matchResult ? matchResult[1] : null;
-  const navTabLinks = document.querySelector('.nav-sections ul');
-
-  [...navTabLinks.children].forEach((tab) => {
-    const link = tab.querySelector('a');
-    const linkTitle = link.title.toLowerCase();
-
-    if (linkTitle === path || (linkTitle === 'shop' && ['products', 'equipment', 'search'].includes(path))) {
-      link.classList.add('active');
-    }
-  });
-}
 
 /**
  * decorates the header, mainly the nav
@@ -168,61 +153,6 @@ export default async function decorate(block) {
     });
   }
 
-  const navTools = nav.querySelector('.nav-tools');
-
-  /** Mini Cart */
-  const excludeMiniCartFromPaths = ['/checkout', '/order-confirmation'];
-
-  const minicart = document.createRange().createContextualFragment(`
-     <div class="minicart-wrapper">
-       <button type="button" class="nav-cart-button" aria-label="Cart"></button>
-       <div class="minicart-panel nav-panel"></div>
-     </div>
-   `);
-
-  navTools.append(minicart);
-
-  /** Search */
-  const search = document.createRange().createContextualFragment(`
-  <div class="search-wrapper">
-    <button type="button" class="button nav-search-button">Search</button>
-    <div class="nav-search-input nav-search-panel nav-panel hidden">
-      <form id="search_mini_form" action="/search" method="GET">
-        <input id="search" type="search" name="q" placeholder="Search" />
-        <div id="search_autocomplete" class="search-autocomplete"></div>
-      </form>
-    </div>
-  </div>
-  `);
-
-  navTools.append(search);
-
-  const searchPanel = navTools.querySelector('.nav-search-panel');
-  const searchButton = navTools.querySelector('.nav-search-button');
-  const searchInput = searchPanel.querySelector('input');
-
-  function toggleSearch(state) {
-    const show = state ?? !searchPanel.classList.contains('nav-panel--show');
-    searchPanel.classList.toggle('nav-panel--show', show);
-    if (show) searchInput.focus();
-  }
-
-  navTools.querySelector('.nav-search-button').addEventListener('click', async () => {
-    await import('./searchbar.js');
-    document.querySelector('header .nav-search-input').classList.toggle('hidden');
-    toggleSearch();
-  });
-
-  // Close panels when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!minicartPanel.contains(e.target) && !cartButton.contains(e.target)) {
-      toggleMiniCart(false);
-    }
-
-    if (!searchPanel.contains(e.target) && !searchButton.contains(e.target)) {
-      toggleSearch(false);
-    }
-  });
 
   // hamburger for mobile
   const hamburger = document.createElement('div');
