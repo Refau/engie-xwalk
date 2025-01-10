@@ -1,15 +1,6 @@
 {
     "mappings": [
       "/content/engie-xwalk/:/",
-      "/content/engie-xwalk/configuration:/.helix/config.json",
-      "/content/engie-xwalk/metadata:/metadata.json",
-      "/content/engie-xwalk/configs:/configs.json",
-      "/content/engie-xwalk/configs-stage:/configs-stage.json",
-      "/content/engie-xwalk/configs-dev:/configs-dev.json",
-      "/content/engie-xwalk/redirects:/redirects.json",
-      "/content/engie-xwalk/placeholders:/placeholders.json",
-      "/content/engie-xwalk/products/recommended-products:/products/recommended-products.json",
-      "/content/engie-xwalk/enrichment/enrichment:/enrichment/enrichment.json",
       "/content/dam/citisignal/images/products/:/images/products/"
     ],
     "includes": [
