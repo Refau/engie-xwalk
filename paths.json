@@ -1,6 +1,8 @@
 {
     "mappings": [
       "/content/engie-xwalk/:/",
+      "/content/engie-xwalk/configuration:/.helix/config.json",
+      "/content/engie-xwalk/metadata:/metadata.json",
       "/content/dam/citisignal/images/products/:/images/products/"
     ],
     "includes": [
