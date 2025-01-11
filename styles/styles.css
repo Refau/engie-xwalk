@@ -13,9 +13,6 @@
  */
 
  :root {
-  --primary-color: #8821f4;
-  --secondary-color: #3C1268;
-  --button-radius: 12px;
   --border-color: #eaeaea;
 }
 
@@ -70,9 +67,6 @@
   --color-alert-200: #ffebeb;
   --color-alert-500: #db7070;
   --color-alert-800: #c35050;
-  --color-button-active: var(--color-brand-700);
-  --color-button-focus: var(--color-neutral-400);
-  --color-button-hover: var(--color-brand-600);
   --color-action-button-active: var(--color-neutral-50);
   --color-action-button-hover: var(--color-neutral-300);
   --color-opacity-16: rgb(255 255 255 / 16%);
@@ -359,10 +353,6 @@ button.button > u {
   text-decoration: none;
 }
 
-button {
-  border: none;
-  font: var(--type-base-font-family);
-}
 
 main input:hover {
   border: 1px solid var(--color-neutral-700);
